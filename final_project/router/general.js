@@ -22,8 +22,8 @@ public_users.post("/register", (req,res) => {
 public_users.get('/',async (req, res) => {
 
     try{
-        await res.status(200).json(books);
-
+//        await res.status(200).JSON.stringify({books}, null, 4);
+          res.send(JSON.stringify({books}, null, 4));
     } catch(error){
         return res.status(400).json({message:error})
     }
@@ -44,7 +44,8 @@ public_users.get('/isbn/:isbn',async (req, res) => {
         const isbn = req.params.isbn;
         const book = await books[isbn];
 
-        res.status(200).json(book);
+//        res.status(200).json(book);
+          res.send(JSON.stringify({book}, null, 4));
         
     }catch(error){
         return res.status(400).json({message:error})
@@ -82,7 +83,8 @@ public_users.get('/author/:author',function (req, res){
     })
     .then(books => {
         if (books.length > 0) {
-            res.json(books);
+//          res.json(books);
+            res.send(JSON.stringify({books}, null, 4));            
         } else {
             res.status(404).json({ message: "No books found for this author."});
         }
@@ -99,7 +101,8 @@ public_users.get('/title/:title',function (req, res) {
         const title = req.params.title;
         const matchingBooks = [];
         for (const key in books) {
-            if (books[key].title === title) {
+            const tt = books[key].title.split(' ')[0];            
+            if (title === tt) {
                 matchingBooks.push(books[key]);
             }
         }
@@ -107,7 +110,8 @@ public_users.get('/title/:title',function (req, res) {
     })
     .then(books => {
         if (books.length > 0) {
-            res.json(books);
+//          res.json(books);
+            res.send(JSON.stringify({books}, null, 4));              
         } else {
             res.status(404).json({ message: "No books found for this title."});
         }
@@ -127,7 +131,8 @@ public_users.get('/review/:isbn',function (req, res) {
     }
 
        if (Object.keys(reviews).length > 0) {
-        res.json(reviews);
+//        res.json(reviews);
+        res.send(JSON.stringify({reviews}, null, 4));         
     } else {
         res.status(404).json({ message: "No reviews found for this book." });
     }
