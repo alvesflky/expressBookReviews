@@ -8,7 +8,7 @@ const books = {
     7: {"author": "Unknown", "title": "Nj\u00e1l's Saga", "reviews": [{"username": "user1", "review": "Nordic saga!"}, {"username": "user2", "review": "Historically rich!"}], "isbn": "isbn-7890123456"},
     8: {"author": "Jane Austen", "title": "Pride and Prejudice", "reviews": [{"username": "user1", "review": "Classic romance!"}, {"username": "user2", "review": "Timeless love!"}], "isbn": "isbn-8901234567"},
     9: {"author": "Honor\u00e9 de Balzac", "title": "Le P\u00e8re Goriot", "reviews": [{"username": "user1", "review": "French masterpiece!"}, {"username": "user2", "review": "Compelling plot!"}], "isbn": "isbn-9012345678"},
-    10: {"author": "Samuel Beckett", "title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": [{"username": "user1", "review": "Existential journey!"}, {"username": "user2", "review": "Philosophical depth!"}], "isbn": "isbn-0123456789"}
-};
+    10: {"author": "Samuel Beckett", "title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": [{"username": "user1", "review": "Existential journey!"}, {"username": "user2", "review": "Philosophical depth!"}], "isbn": "isbn-0123456789"},
+    11: {"author": "Paulo Coelho", "title": "Alquimista", "reviews": [{"username": "test1", "review": "Existential journey!"}, {"username": "user2", "review": "Philosophical depth!"}], "isbn": "isbn-0123456789"}    };
 
 module.exports = books;
